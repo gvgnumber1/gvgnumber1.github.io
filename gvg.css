@@ -69,13 +69,14 @@ ul {
 a {
   --text-color: var(--color-shades-dark);
   border-block-end: 3px solid var(--border-color, transparent);
+  writing-mode: horizontal-tb;
   color: var(--text-color);
   padding: 0.1rem;
   text-decoration: none;
 }
 
 a:where(:hover, :focus) {
-  --border-color: var(--text-color);
+  --border-color: var(--color-highlight);
 }
 
 [aria-current="page"] {
@@ -200,6 +201,59 @@ button:focus-visible {
   font-size: .6rem;
 }
 
+
+
+/* ------------------------------------ *\
+   port description
+\* ------------------------------------ */
+
+.port-item{
+  display:grid;
+  grid-template-columns: auto 198px;
+  grid-auto-rows: minmax(50%, min-content);
+  grid-auto-flow: dense;
+  justify-content: flex-end;
+}
+
+.port-title{
+  font-size: 1.5rem;
+  padding: 18px;
+  color: var(--color-highlight);
+  text-align: right;
+}
+
+.port-subhead{
+  padding: 18px;
+  border-top: thin solid var(--color-shades-dark);
+  text-align: right;
+}
+
+.port-names{
+  min-width: 188px;
+  padding: 0px 9px 18px 0px;
+  text-align: right;
+}
+
+.port-desc{
+  width: 198px;
+  padding: 0px 0px 18px 9px;
+  text-align: left;
+}
+
+.port-copy{
+  padding: 98px 18px 18px 0px;
+  text-align: left;
+}
+
+.port-subcopy{
+  padding: 0px 18px 0px 0px;
+  text-align: left;
+}
+
+.port-headline{
+  padding: 0px 0px 18px 0px;
+  text-align: center;
+}
 
 
 /* ------------------------------------ *\
@@ -335,6 +389,29 @@ button:focus-visible {
   animation: move-down .3s linear;
   padding:1em;
   width:100%;
+}
+
+.gallery-video{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ytframe{
+  display: flex;
+  margin: 18px 0 0 0;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.ytframe iframe{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.end-container{
+  height: 18px;
 }
 
 .w-1{
@@ -720,7 +797,27 @@ font-style: normal;
   }
   .h-1,.h-2,.h-3,.h-4,.h-5,.h-6,.h-7,.h-8,.h-9,.h-10,.h-11,.h-12,.h-13,.h-14,.h-15,.h-16,.h-17,.h-18,.h-19{
     grid-row:span 1;
-}
+  }
+  .port-item{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .port-subhead{
+    text-align: left;
+    border-top: 0px solid var(--color-shades-dark);
+    /* align-items: center; */
+  }
+  .port-copy{
+    padding: 18px 54px 18px 54px;
+    text-align: center;
+  }
+  .port-subcopy{
+    padding: 18px 54px 18px 54px;
+    text-align: center;
+  }
+  /* .ytframe iframe{
+    width: 100%;
+    height: auto;
+  } */
 }
 
 
