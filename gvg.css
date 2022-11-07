@@ -303,7 +303,6 @@ button:focus-visible {
   grid-auto-rows: minmax(min-content, 7vh);
   grid-gap: 18px;
   grid-auto-flow: dense;
-  margin: 0 0 18px 0;
 }
 
 .gallery-header{
