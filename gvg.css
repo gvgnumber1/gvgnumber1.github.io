@@ -4,6 +4,9 @@
   --color-highlight: rgb(65, 170, 10);
   --color-seconds: rgb(220, 100, 10);
   --color-thirds: rgb(130, 10, 220);
+  --color-charleston: rgb(255, 205, 0);
+  --color-lockheed: rgb(0, 47, 108);
+  --color-patron: rgb(148, 187, 30);
 }
 
 * { 
@@ -19,8 +22,7 @@ html{
 
 body {
   min-height: 100%;
-  margin:0px 18px 18px;
-  padding:0 0 100px;
+  margin:0px 18px 130px 18px;
   text-align:center;
   font-family: 'Merriweather', serif;
   font-size: 1.1rem;
@@ -75,6 +77,10 @@ a {
   text-decoration: none;
 }
 
+.abase{
+  padding: 0;
+}
+
 a:where(:hover, :focus) {
   --border-color: var(--color-highlight);
 }
@@ -85,10 +91,20 @@ a:where(:hover, :focus) {
 }
 
 .subhead{
-  padding: 18px;
+  padding: 0 18px 18px;
 }
 
+.CharlestonBattery{
+  color: var(--color-charleston);
+}
 
+.LockheedMartin{
+  color: var(--color-lockheed);
+}
+
+.PatronTequila{
+  color: var(--color-patron);
+}
 
 /* ------------------------------------ *\
    buttons
@@ -210,7 +226,7 @@ button:focus-visible {
 .port-item{
   display:grid;
   grid-template-columns: auto 198px;
-  grid-auto-rows: minmax(min-content, 10vh);
+  grid-auto-rows: minmax(min-content, 7vh);
   grid-auto-flow: dense;
   justify-content: flex-end;
 }
@@ -218,8 +234,12 @@ button:focus-visible {
 .port-title{
   font-size: 1.5rem;
   padding: 18px;
-  color: var(--color-highlight);
   text-align: right;
+}
+
+.port-subtitle{
+  padding: 18px 0 0 0;
+  text-align: left;
 }
 
 .port-subhead{
@@ -257,7 +277,7 @@ button:focus-visible {
 
 
 /* ------------------------------------ *\
-   gallery
+   gallery - rigid
 \* ------------------------------------ */
 
 
@@ -265,19 +285,42 @@ button:focus-visible {
 .container{
   display:grid;
   grid-template-columns: repeat(15,1fr);
-  grid-auto-rows: minmax(min-content, 10vh);
+  grid-auto-rows: 150px;
   grid-gap: 18px;
   grid-auto-flow: dense;
+}
+
+
+/* ------------------------------------ *\
+   gallery - fluid
+\* ------------------------------------ */
+
+
+
+.flutainer{
+  display:grid;
+  grid-template-columns: repeat(15,1fr);
+  grid-auto-rows: minmax(min-content, 7vh);
+  grid-gap: 18px;
+  grid-auto-flow: dense;
+  margin: 0 0 18px 0;
 }
 
 .gallery-header{
   background-color: rgb(65, 170, 10);
   padding: 18px;
+  margin: 0 0 18px 0;
   color:#fff;
   place-items: center;
 }
 
 .gallery-header .centercopy{
+  place-items: center;
+}
+
+.gallery-footer{
+  padding: 18px;
+  margin: 0 0 18px 0;
   place-items: center;
 }
 
@@ -358,6 +401,10 @@ button:focus-visible {
   transform:scale(1.05);
 }
 
+.gallery-item-lt:hover .image img{
+  transform:scale(1.05);
+}
+
 .gallery-item-lc:hover .image img{
   transform:scale(1.05);
 }
@@ -373,6 +420,7 @@ button:focus-visible {
   pointer-events:none;
   z-index:4;
   transition: .3s ease-in-out;
+  background-color: black;
 }
 
 .gallery-item-lc .text{
@@ -407,6 +455,20 @@ button:focus-visible {
   margin: 0 auto;
 }
 
+.cenh654{
+  height: 654px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cenh486{
+  height: 486px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ytframe{
   display: flex;
   margin: 18px 0 0 0;
@@ -421,6 +483,7 @@ button:focus-visible {
   width: 100%;
   height: 100%;
 }
+
 .end-container{
   height: 18px;
 }
@@ -555,6 +618,10 @@ button:focus-visible {
   cursor: pointer;
 }
 
+.c-accordion__trigger::-webkit-details-marker {
+  color: transparent;
+}
+
 .c-accordion__trigger::before {
   Content: "";
   position: absolute;
@@ -674,10 +741,6 @@ sup{
   font-size: 1.3rem;
 }
 
-/* .c-text__display{
-  margin-bottom: 0.5rem;
-} */
-
 
 
 /* ------------------------------------ *\
@@ -706,7 +769,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 .styled-input {
   float: left;
   width: 100%;
-  margin: 1rem 0;
+  margin: 0 0 18px 0;
   position: relative;
   border-radius: 1rem;
 }
@@ -759,35 +822,6 @@ textarea {
   margin: 20px auto 25px auto;
 }
 
-/* .submit-btn {
-  float: right;
-  padding: 7px 35px;
-  border-radius: 60px;
-  display: inline-block;
-  background-color: #4b8cfb;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
-            0 2px 10px 0 rgba(0,0,0,0.07);
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-
-.submit-btn:hover {
-  transform: translateY(1px);
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
-            0 1px 1px 0 rgba(0,0,0,0.09);
-}
-
-@media (max-width: 768px) {
-  .submit-btn {
-      width:100%;
-      float: none;
-      text-align:center;
-  }
-} */
-
 input[type=checkbox] + label {
 color: #ccc;
 font-style: italic;
@@ -799,10 +833,30 @@ font-style: normal;
 }
 
 
-@media screen and (max-width:1200px){
+@media screen and (max-width:1000px){
+  body {
+    margin:0px 18px 204px 18px;
+  }
+  button{
+    margin: 18px 0 0 0;
+  }
   .container{
       grid-template-columns: repeat(1,1fr);
       grid-auto-rows: min-content;
+  }
+  .flutainer{
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: min-content;
+  }
+  .gallery-item .image img {
+    width: 100%;
+    height: auto;
+  }
+  .cenh654{
+    height: auto;
+  }
+  .cenh486{
+    height: auto;
   }
   .w-1,.w-2,.w-3,.w-4,.w-5,.w-6,.w-7,.w-8,.w-9,.w-10,.w-11,.w-12,.w-13,.w-14,.w-15,.w-16,.w-17,.w-18,.w-19{
       grid-column:span 1;
@@ -816,7 +870,6 @@ font-style: normal;
   .port-subhead{
     text-align: left;
     border-top: 0px solid var(--color-shades-dark);
-    /* align-items: center; */
   }
   .port-copy{
     padding: 18px 54px 18px 54px;
@@ -826,10 +879,16 @@ font-style: normal;
     padding: 18px 54px 18px 54px;
     text-align: center;
   }
-  /* .ytframe iframe{
-    width: 100%;
-    height: auto;
-  } */
+  .port-names{
+    min-width: auto;
+    margin: 0 18px 0 -18px;
+    padding: 0px 4px 18px 4px;
+  }
+  .port-desc{
+    width: auto;
+    margin: 0 0 0 -18px;
+    padding: 0px 4px 18px 4px;
+  }
 }
 
 
