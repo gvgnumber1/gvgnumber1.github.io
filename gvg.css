@@ -7,6 +7,8 @@
   --color-charleston: rgb(255, 205, 0);
   --color-lockheed: rgb(0, 47, 108);
   --color-patron: rgb(148, 187, 30);
+  --color-nike: rgb(0, 0, 0);
+  --color-amex: rgb(0, 114, 206);
 }
 
 * { 
@@ -104,6 +106,14 @@ a:where(:hover, :focus) {
 
 .PatronTequila{
   color: var(--color-patron);
+}
+
+.Nike{
+  color: var(--color-nike);
+}
+
+.AMEX{
+  color: var(--color-amex);
 }
 
 /* ------------------------------------ *\
@@ -303,6 +313,9 @@ button:focus-visible {
   grid-auto-rows: minmax(min-content, 7vh);
   grid-gap: 18px;
   grid-auto-flow: dense;
+}
+.gallery-article{
+  margin: 18px 0 18px 0;
 }
 
 .gallery-header{
