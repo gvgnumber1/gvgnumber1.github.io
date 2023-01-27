@@ -2,8 +2,10 @@
   --color-shades-dark: rgb(0, 0, 0);
   --color-shades-light: rgb(255, 255, 255);
   --color-highlight: rgb(65, 170, 10);
-  --color-seconds: rgb(220, 100, 10);
-  --color-thirds: rgb(130, 10, 220);
+  --color-seconds: #02B1CC;
+  --color-thirds: #7C0AFF;
+  --color-orange: rgb(220, 100, 10);
+  --color-fpurple: rgb(130, 10, 220);
   --color-charleston: rgb(255, 205, 0);
   --color-lockheed: rgb(0, 47, 108);
   --color-patron: rgb(148, 187, 30);
@@ -37,7 +39,7 @@ h1{
 }
 
 h2{
-  color: var(--color-highlight);
+  color: var(--color-shades-dark);
 }
 
 h3{
@@ -147,7 +149,6 @@ button {
   position: relative;
   right: 0px;
   transform: translate3d(0, 0, 0);
-  /* margin: -18px 18px 0; */
   padding-block: 0.7rem 0.8rem;
   padding-inline: 3rem 2rem;
   font: inherit;
@@ -178,13 +179,13 @@ button:after {
 
 button:before {
   z-index: -1;
-  border: var(--border-width) solid rgba(rgb(130, 10, 220), var(--border-opacity));
-  background: rgb(220, 100, 10);
+  border: var(--border-width) solid rgba(#7C0AFF, var(--border-opacity));
+  background: #02B1CC;
 }
 
 button:after {
   z-index: -2;
-  background: rgb(130, 10, 220);
+  background: #7C0AFF;
   filter: blur(var(--elevate));
 }
 
@@ -331,6 +332,12 @@ button:focus-visible {
   grid-gap: 18px;
   grid-auto-flow: dense;
 }
+
+.gallery-subhead{
+  padding: 18px;
+  margin: 0 0 18px;
+}
+
 .gallery-article{
   margin: 18px 0 18px 0;
 }
